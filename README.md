@@ -1,4 +1,4 @@
-# 📋 App Lista de Tarefas
+# 📋 App Lista de Tarefas - front end
 
 Sistema Web desenvolvido em PHP utilizando o padrão MVC para gerenciamento de tarefas.
 
