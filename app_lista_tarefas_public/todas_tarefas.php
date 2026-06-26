@@ -126,15 +126,15 @@
                                         <i class="fas fa-trash-alt fa-lg text-danger"
 											onclick="remover(<?= $tarefa->id ?>)">
 										</i>
+										<?php if ($tarefa->status == 'pendente'){	?>
+											<i class="fas fa-edit fa-lg text-info"
+											onclick="editar(<?= $tarefa->id ?>, <?= htmlspecialchars(json_encode($tarefa->tarefa), ENT_QUOTES, 'UTF-8') ?>)">
+											</i>
 
-                                        <i class="fas fa-edit fa-lg text-info"
-                                           onclick="editar(<?= $tarefa->id ?>, <?= htmlspecialchars(json_encode($tarefa->tarefa), ENT_QUOTES, 'UTF-8') ?>)">
-                                        </i>
-
-                                        <i class="fas fa-check-square fa-lg text-success"
-											onclick="marcarRealizada(<?= $tarefa->id ?>)">
-										</i>
-
+											<i class="fas fa-check-square fa-lg text-success"
+												onclick="marcarRealizada(<?= $tarefa->id ?>)">
+											</i>
+										<?php	}	?>
                                     </div>
 
                                 </div>
