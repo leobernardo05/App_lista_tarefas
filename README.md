@@ -1,213 +1,170 @@
-# 📋 App Lista de Tarefas - front end
+# 📋 App Lista de Tarefas - Front-end
 
-Sistema Web desenvolvido em PHP utilizando o padrão MVC para gerenciamento de tarefas.
+Interface web da aplicação **App Lista de Tarefas**, desenvolvida em PHP com HTML, CSS, Bootstrap e JavaScript.
 
-Projeto desenvolvido durante o curso **Desenvolvimento Web Completo** (Udemy), com diversas melhorias implementadas.
+Este repositório contém apenas a camada de apresentação (Views) da aplicação. Toda a lógica de negócio, controle e acesso ao banco de dados está disponível em um repositório separado.
 
----
+## 🔗 Repositório do Back-end
 
-## 📸 Demonstração
-
-O sistema permite:
-
-- ✅ Cadastrar tarefas
-- ✏️ Editar tarefas
-- 🗑️ Excluir tarefas
-- ✔️ Marcar tarefas como realizadas
-- 📋 Visualizar todas as tarefas
-- ⏳ Visualizar somente tarefas pendentes
+**Backend:** https://github.com/leobernardo05/App_lista_tarefas_back-end
 
 ---
 
-## 🚀 Tecnologias utilizadas
+# 📸 Funcionalidades
 
-- PHP 8
-- HTML5
-- CSS3
-- Bootstrap 4
-- JavaScript
-- MySQL
-- PDO
-- Git
-- GitHub
+A aplicação permite:
+
+* ✅ Cadastrar tarefas
+* ✏️ Editar tarefas
+* 🗑️ Excluir tarefas
+* ✔️ Marcar tarefas como realizadas
+* 📋 Listar todas as tarefas
+* ⏳ Visualizar apenas tarefas pendentes
+* 🎨 Interface responsiva utilizando Bootstrap
 
 ---
 
-## 📂 Estrutura do projeto
+# 🚀 Tecnologias Utilizadas
+
+* PHP 8
+* HTML5
+* CSS3
+* Bootstrap 4
+* JavaScript
+* Git
+* GitHub
+
+---
+
+# 📂 Estrutura do Projeto
 
 ```
-App_lista_tarefas
+app_lista_tarefas_public
 │
-├── app_lista_tarefas
-│   ├── css
-│   ├── img
-│   ├── index.php
-│   ├── nova_tarefa.php
-│   ├── todas_tarefas.php
-│   └── tarefa_controller.php
-│
-├── app_lista_tarefas_protegido
-│   ├── conexao.php
-│   ├── tarefa.model.php
-│   ├── tarefa.service.php
-│   └── tarefa_controller.php
-│
+├── css/
+├── img/
+├── index.php
+├── nova_tarefa.php
+├── todas_tarefas.php
 └── README.md
 ```
 
 ---
 
-## Funcionalidades
+# 🖥️ Telas da Aplicação
 
-### Cadastro de tarefas
+## Página Inicial
 
-Permite inserir novas tarefas no banco de dados.
+* Exibição das tarefas pendentes.
+
+## Nova Tarefa
+
+* Cadastro de uma nova tarefa.
+
+## Todas as Tarefas
+
+* Listagem completa das tarefas.
+* Edição.
+* Exclusão.
+* Marcação como realizada.
 
 ---
 
-### Atualização
+# 🎯 Funcionalidades da Interface
 
-Permite editar uma tarefa existente diretamente na página.
+### Cadastro
 
----
+Permite inserir novas tarefas.
+
+### Edição
+
+Atualização dinâmica da tarefa sem sair da página.
 
 ### Exclusão
 
-Permite excluir uma tarefa definitivamente do banco de dados.
-
----
+Remove permanentemente uma tarefa.
 
 ### Conclusão
 
-Permite alterar o status da tarefa para **Realizada**.
+Altera o status da tarefa para **Realizada**.
+
+### Filtro
+
+A tela inicial apresenta apenas tarefas pendentes.
 
 ---
 
-### Filtro de tarefas
+# 🏗️ Arquitetura
 
-Exibe apenas tarefas pendentes na tela inicial.
+Este projeto representa a camada de apresentação da aplicação.
 
----
-
-## Banco de Dados
-
-Tabela principal:
-
-```
-tb_tarefas
-```
-
-Campos:
-
-| Campo | Tipo |
-|-------|------|
-| id | INT |
-| tarefa | VARCHAR |
-| id_status | INT |
-
-Tabela de status:
-
-```
-tb_status
-```
-
-| id | status |
-|----|---------|
-|1|Pendente|
-|2|Realizada|
+As páginas comunicam-se com o backend através do controlador da aplicação.
 
 ---
 
-## Arquitetura
+# 📁 Arquivos Principais
 
-O projeto utiliza uma arquitetura semelhante ao padrão MVC.
-
-### Model
-
-```
-tarefa.model.php
-```
-
-Responsável pelos atributos da tarefa.
+| Arquivo           | Descrição                            |
+| ----------------- | ------------------------------------ |
+| index.php         | Página inicial com tarefas pendentes |
+| nova_tarefa.php   | Cadastro de tarefas                  |
+| todas_tarefas.php | Gerenciamento completo das tarefas   |
 
 ---
 
-### Service
+# 🔗 Integração com o Back-end
 
-```
-tarefa.service.php
-```
+Para que a aplicação funcione corretamente, é necessário utilizar o backend disponível em:
 
-Responsável pelas operações de banco de dados:
+**App Lista de Tarefas - Back-end**
 
-- Inserir
-- Atualizar
-- Remover
-- Recuperar
-- Recuperar pendentes
-- Marcar como realizada
+https://github.com/leobernardo05/App_lista_tarefas_back-end
 
----
+O backend é responsável por:
 
-### Controller
-
-```
-tarefa_controller.php
-```
-
-Responsável por receber as requisições e executar as ações.
+* conexão com o banco de dados;
+* regras de negócio;
+* operações CRUD;
+* gerenciamento dos status das tarefas.
 
 ---
 
-### View
+# ▶️ Como Executar
 
-- index.php
-- nova_tarefa.php
-- todas_tarefas.php
-
----
-
-## Como executar
-
-Clone o projeto
+1. Clone este repositório:
 
 ```bash
 git clone https://github.com/leobernardo05/App_lista_tarefas.git
 ```
 
-Entre na pasta
+2. Clone também o backend:
 
 ```bash
-cd App_lista_tarefas
+git clone https://github.com/leobernardo05/App_lista_tarefas_back-end.git
 ```
 
-Configure o banco de dados MySQL.
+3. Configure o XAMPP.
 
-Altere os dados de conexão em:
+4. Configure a conexão com o banco de dados no backend.
 
-```
-app_lista_tarefas_protegido/conexao.php
-```
+5. Importe o banco de dados MySQL.
 
-Importe o banco de dados.
-
-Execute utilizando XAMPP, WAMP ou Laragon.
+6. Execute o projeto pelo navegador.
 
 ---
 
-## Melhorias implementadas
+# 📈 Melhorias Implementadas
 
-- CRUD completo
-- Organização em camadas
-- Utilização de PDO
-- Consultas preparadas
-- Separação do backend protegido
-- Interface responsiva com Bootstrap
-- Manipulação dinâmica do DOM com JavaScript
+* Interface responsiva
+* CRUD completo
+* Manipulação dinâmica do DOM com JavaScript
+* Separação entre Front-end e Back-end
+* Organização seguindo arquitetura MVC
+* Navegação simples e intuitiva
 
 ---
 
-## Autor
+# 👨‍💻 Autor
 
 **Leonardo Bernardo**
 
@@ -216,10 +173,11 @@ GitHub:
 https://github.com/leobernardo05
 
 LinkedIn:
+
 https://www.linkedin.com/in/leonardo0503/
 
 ---
 
-## Licença
+# 📄 Licença
 
-Projeto desenvolvido para fins de estudo.
+Este projeto foi desenvolvido para fins de estudo durante o curso **Desenvolvimento Web Completo** e aprimorado com funcionalidades adicionais para prática de PHP, JavaScript, MySQL e arquitetura MVC.
