@@ -82,7 +82,7 @@
 
 											<i
 												class="fas fa-edit fa-lg text-info"
-												onclick="editar(<?= $tarefa->id ?>, '<?= $tarefa->tarefa ?>')">
+												onclick="editar()">
 											</i>
 
 											<i class="fas fa-check-square fa-lg text-success"></i>
