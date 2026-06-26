@@ -36,12 +36,7 @@
             inputTarefa.name = 'tarefa'
             inputTarefa.className = 'form-control'
             inputTarefa.value = textoTarefa
-			
-			// criar um input hidden para guardar o if da tarefa
-			let inputId = document.createElement('input')
-			inputId.type = 'hidden'
-			inputId.name = 'id'
-			inputId.value = id
+		
 
             // Botão
             let button = document.createElement('button')
