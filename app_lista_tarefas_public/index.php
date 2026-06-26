@@ -1,3 +1,8 @@
+<?php
+	$acao = 'recuperarTarefasPendentes';
+	require 'tarefa_controller.php';
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -35,25 +40,35 @@
 							<div class="col">
 								<h4>Tarefas pendentes</h4>
 								<hr />
+								<?php foreach($tarefas as $tarefa){ ?>
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Lavar o carro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
+									<div class="row mb-3 d-flex align-items-center tarefa"
+										id="tarefa_<?= $tarefa->id ?>">
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Passear com o cachorro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
+										<div class="col-sm-9">
+											<?= $tarefa->tarefa ?>
+											(<?= $tarefa->status ?>)
+										</div>
+
+										<div class="col-sm-3 mt-2 d-flex justify-content-between">
+
+											<i class="fas fa-trash-alt fa-lg text-danger"
+												onclick="remover(<?= $tarefa->id ?>)">
+											</i>
+											<?php if ($tarefa->status == 'pendente'){	?>
+												<i class="fas fa-edit fa-lg text-info"
+												onclick="editar(<?= $tarefa->id ?>, <?= htmlspecialchars(json_encode($tarefa->tarefa), ENT_QUOTES, 'UTF-8') ?>)">
+												</i>
+
+												<i class="fas fa-check-square fa-lg text-success"
+													onclick="marcarRealizada(<?= $tarefa->id ?>)">
+												</i>
+											<?php	}	?>
+										</div>
+
 									</div>
-								</div>
-							</div>
+
+                            	<?php } ?>
 						</div>
 					</div>
 				</div>
